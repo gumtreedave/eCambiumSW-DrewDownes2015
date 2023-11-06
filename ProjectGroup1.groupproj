@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{6AE1BA12-E538-4B3B-91A8-EA8480C42B01}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="CAMBIUM.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="C:\Users\dre066\Documents\RAD Studio\Projects\PDF.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="CAMBIUM">
+			<MSBuild Projects="CAMBIUM.dproj"/>
+		</Target>
+		<Target Name="CAMBIUM:Clean">
+			<MSBuild Targets="Clean" Projects="CAMBIUM.dproj"/>
+		</Target>
+		<Target Name="CAMBIUM:Make">
+			<MSBuild Targets="Make" Projects="CAMBIUM.dproj"/>
+		</Target>
+		<Target Name="PDF">
+			<MSBuild Projects="C:\Users\dre066\Documents\RAD Studio\Projects\PDF.dproj"/>
+		</Target>
+		<Target Name="PDF:Clean">
+			<MSBuild Targets="Clean" Projects="C:\Users\dre066\Documents\RAD Studio\Projects\PDF.dproj"/>
+		</Target>
+		<Target Name="PDF:Make">
+			<MSBuild Targets="Make" Projects="C:\Users\dre066\Documents\RAD Studio\Projects\PDF.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="CAMBIUM;PDF"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="CAMBIUM:Clean;PDF:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="CAMBIUM:Make;PDF:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

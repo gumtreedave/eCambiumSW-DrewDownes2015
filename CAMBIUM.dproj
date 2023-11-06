@@ -1,0 +1,209 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{231EFBB3-611C-4DC1-87E5-6A5D791A7995}</ProjectGuid>
+			<ProjectVersion>12.0</ProjectVersion>
+			<MainSource>CAMBIUM.dpr</MainSource>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_UsePackage>vclx;vcl;dbrtl;Rave76VCL;bdertl;rtl;vclactnband;vcldb;vcldbx;dsnap;dsnapcon;TeeUI;TeeDB;Tee;adortl;vclib;ibxpress;IndyCore;IndySystem;IndyProtocols;xmlrtl;inet;intrawebdb_100_120;Intraweb_100_120;VclSmp;vclie;websnap;webdsnap;inetdbbde;inetdbxpress;soaprtl;vclribbon;DbxCommonDriver;DbxClientDriver;DBXInterBaseDriver;DBXMySQLDriver;dbexpress;dbxcds;ActiveXDataControls;Package2</DCC_UsePackage>
+			<DCC_DependencyCheckOutputName>CAMBIUM.exe</DCC_DependencyCheckOutputName>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
+			<DCC_Platform>x86</DCC_Platform>
+			<DCC_E>false</DCC_E>
+			<DCC_N>false</DCC_N>
+			<DCC_S>false</DCC_S>
+			<DCC_F>false</DCC_F>
+			<DCC_K>false</DCC_K>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="CAMBIUM.dpr">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="BoardDimensions.pas">
+				<Form>formBoardDimensions</Form>
+			</DCCReference>
+			<DCCReference Include="CAMBIUMManager.pas">
+				<Form>formMain</Form>
+			</DCCReference>
+			<DCCReference Include="DataModule.pas">
+				<Form>DataModuleBoard</Form>
+				<DesignClass>TDataModule</DesignClass>
+			</DCCReference>
+			<DCCReference Include="ProjectManager.pas"/>
+			<DCCReference Include="ImportWizard.pas">
+				<Form>formImportWizard</Form>
+			</DCCReference>
+			<DCCReference Include="DataObjects.pas"/>
+			<DCCReference Include="LinkCABALAScenario.pas">
+				<Form>formLinkCABALAScenario</Form>
+			</DCCReference>
+			<DCCReference Include="General.pas"/>
+			<DCCReference Include="AddEditData.pas">
+				<Form>formAddEditData</Form>
+			</DCCReference>
+			<DCCReference Include="RunManager.pas"/>
+			<DCCReference Include="ScenarioManager.pas"/>
+			<DCCReference Include="CambiumObjects.pas"/>
+			<DCCReference Include="CAMBIUMModel.pas"/>
+			<DCCReference Include="ProjectWarnings.pas">
+				<Form>formWarnings</Form>
+			</DCCReference>
+			<DCCReference Include="RunInitialisation.pas">
+				<Form>formInitialisation</Form>
+			</DCCReference>
+			<DCCReference Include="ModellingHeight.pas">
+				<Form>formModellingHeight</Form>
+			</DCCReference>
+			<DCCReference Include="DevelopingCellsImage.pas">
+				<Form>formDevelopingCellsImage</Form>
+			</DCCReference>
+			<DCCReference Include="TreePhysModel.pas"/>
+			<DCCReference Include="SetSegmentWidth.pas">
+				<Form>formSegmentWidth</Form>
+			</DCCReference>
+			<DCCReference Include="WriteData.pas"/>
+			<DCCReference Include="ReadData.pas"/>
+			<DCCReference Include="BoardProperties.pas"/>
+			<DCCReference Include="BoardGrades.pas">
+				<Form>formBoardGrades</Form>
+			</DCCReference>
+			<DCCReference Include="ScenarioType.pas">
+				<Form>formScenarioType</Form>
+			</DCCReference>
+			<DCCReference Include="CreateCAMBIUMScenario.pas">
+				<Form>formCreateCAMBIUMScenario</Form>
+			</DCCReference>
+			<DCCReference Include="Event.pas">
+				<Form>formEvent</Form>
+			</DCCReference>
+			<DCCReference Include="ImportDataProgress.pas">
+				<Form>formImportDataProgress</Form>
+			</DCCReference>
+			<DCCReference Include="AddEditCAMBIUMParams.pas"/>
+			<DCCReference Include="SummaryGraphsType.pas">
+				<Form>formSummaryGraphsType</Form>
+			</DCCReference>
+			<DCCReference Include="ExportData.pas">
+				<Form>formExportData</Form>
+			</DCCReference>
+			<DCCReference Include="ColourChoice.pas">
+				<Form>formColourCHoice</Form>
+			</DCCReference>
+			<DCCReference Include="AboutCambium.pas">
+				<Form>formAbout</Form>
+			</DCCReference>
+			<DCCReference Include="GrowthGraphs.pas">
+				<Form>formGrowthGraphs</Form>
+			</DCCReference>
+			<DCCReference Include="DiagnosticGraphs.pas">
+				<Form>formDiagnosticGraphs</Form>
+			</DCCReference>
+			<DCCReference Include="DetailedGraphs.pas">
+				<Form>formDetailedGraphs</Form>
+			</DCCReference>
+			<DCCReference Include="ParallelProc.pas"/>
+			<DCCReference Include="SummaryGraphs.pas">
+				<Form>formSummaryGraphsDist</Form>
+			</DCCReference>
+			<DCCReference Include="SummaryStats.pas">
+				<Form>FormSummaryStats</Form>
+			</DCCReference>
+			<DCCReference Include="ImportCambiumProjectData.pas">
+				<Form>formImportCambiumProject</Form>
+			</DCCReference>
+			<DCCReference Include="OKCANCL2.pas">
+				<Form>OKRightDlg</Form>
+			</DCCReference>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Source>
+						<Source Name="MainSource">CAMBIUM.dpr</Source>
+					</Source>
+					<Parameters>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">True</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">67</VersionInfo>
+						<VersionInfo Name="Debug">True</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">True</VersionInfo>
+						<VersionInfo Name="Private">True</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">3081</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">CSIRO</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription">Cambium xylem development tool</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">1.0.0.67</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+						<VersionInfoKeys Name="SpecialBuild"/>
+						<VersionInfoKeys Name="PrivateBuild"/>
+					</VersionInfoKeys>
+					<Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dcloffice2k120.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dclofficexp120.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\6.0\Bpl\ADOX.bpl">(untitled)</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\6.0\Bpl\ADOX1.bpl">(untitled)</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\6.0\Bpl\ADOX2.bpl">(untitled)</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\6.0\Bpl\ADOX3.bpl">(untitled)</Excluded_Packages>
+					</Excluded_Packages>
+				</Delphi.Personality>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>
